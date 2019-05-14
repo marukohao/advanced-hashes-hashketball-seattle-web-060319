@@ -239,3 +239,21 @@ def most_points_scored
   end
   name 
 end
+
+def player_with_longest_name
+ size = 0 
+ number = 0 
+ game_hash.each do |location, teamdata| 
+    teamdata.each do |key, value|
+      if key == :players
+        value.each do |names, item|
+          if names.length > size
+            size = names.length
+            number = names
+          end
+        end
+      end
+    end
+  end
+  number 
+end
