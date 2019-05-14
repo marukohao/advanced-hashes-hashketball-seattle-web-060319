@@ -188,5 +188,18 @@ def player_numbers(team_name)
   array
 end
 
-def player_stats
+def player_stats(name)
+ count = nil  
+ game_hash.each do |location, teamdata| 
+    teamdata.each do |key, value|
+      if key == :players
+        value.each do |names, item|
+          if names == name
+            count = item
+          end
+        end
+      end
+    end
+  end
+  count  
 end
