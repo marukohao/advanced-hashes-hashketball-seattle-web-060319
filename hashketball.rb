@@ -213,7 +213,7 @@ def big_shoe_rebounds
         value.each do |names, item|
           if item[:shoe] > size
             size = item[:shoe]
-            number = item[:number]
+            number = item[:rebounds]
           end
         end
       end
