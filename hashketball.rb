@@ -224,17 +224,18 @@ end
 
 def most_points_scored
  points = 0 
+ name = nil 
  game_hash.each do |location, teamdata| 
     teamdata.each do |key, value|
       if key == :players
         value.each do |names, item|
-          if item[:shoe] > size
-            size = item[:shoe]
-            number = item[:rebounds]
+          if item[:points] > points
+            points = item[:points]
+            name = names
           end
         end
       end
     end
   end
-  number 
+  name 
 end
