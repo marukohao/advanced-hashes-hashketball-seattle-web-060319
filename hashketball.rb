@@ -178,5 +178,9 @@ end
 
 def player_numbers(team_name)
   array = []
-  
+  game_hash.each do |location, teamdata|
+    if teamdata[:team_name] == team_name
+      
+    end
+  end
 end
