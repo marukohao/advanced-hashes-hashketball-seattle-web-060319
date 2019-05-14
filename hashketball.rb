@@ -126,7 +126,7 @@ def num_points_scored(name)
           if names == name
             item.each do |items, score|
               if items == :points
-                puts score
+                score
               end
             end           
           end
