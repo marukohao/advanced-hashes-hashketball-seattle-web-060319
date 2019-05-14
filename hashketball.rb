@@ -146,7 +146,7 @@ def shoe_size(name)
         value.each do |names, item|
           if names == name
             item.each do |items, score|
-              if items == :shoes
+              if items == :shoe
                 count = score
               end
             end           
