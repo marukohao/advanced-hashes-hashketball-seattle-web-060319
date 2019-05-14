@@ -1,12 +1,12 @@
 # Write your code here!
-require "pry"
+
 def game_hash
   hash = {
     :home => {
       :team_name => "Brooklyn Nets",
       :colors => ["Black", "White"], 
       :players => {
-        :alan_anderson => {
+        "Alan Anderson" => {
           :number => 0,
           :shoe => 16,
           :points => 22,
@@ -16,7 +16,7 @@ def game_hash
           :blocks => 1,
           :slam_dunks => 1
         },
-        :reggie_evans => {
+        "Reggie Evans" => {
           :number => 30,
           :shoe => 14,
           :points => 12,
@@ -26,7 +26,7 @@ def game_hash
           :blocks => 12,
           :slam_dunks => 7          
         },
-        :brook_lopez => {
+        "Brook Lopez" => {
           :number => 11,
           :shoe => 17,
           :points => 17,
@@ -36,7 +36,7 @@ def game_hash
           :blocks => 1,
           :slam_dunks => 15          
         },
-        :moson_plumlee => {
+        "Moson Plumlee" => {
           :number => 1,
           :shoe => 19,
           :points => 26,
@@ -46,7 +46,7 @@ def game_hash
           :blocks => 8,
           :slam_dunks => 5         
         },
-        :jason_terry => {
+        "Jason Terry" => {
           :number => 31,
           :shoe => 15,
           :points => 19,
@@ -62,7 +62,7 @@ def game_hash
       :team_name => "Charlotte Hornets",
       :colors => ["Turquoise", "Purple"], 
       :players => {
-        :jeff_adrien => {
+        "Jeff Adrien" => {
           :number => 4,
           :shoe => 18,
           :points => 10,
@@ -72,7 +72,7 @@ def game_hash
           :blocks => 7,
           :slam_dunks => 2         
         },
-        :bismack_biyombo => {
+        "Bismack Biyombo" => {
           :number => 0,
           :shoe => 16,
           :points => 12,
@@ -82,7 +82,7 @@ def game_hash
           :blocks => 15,
           :slam_dunks => 10         
         },
-        :desagno_diop => {
+        "Besagno Diop" => {
           :number => 2,
           :shoe => 14,
           :points => 24,
@@ -92,7 +92,7 @@ def game_hash
           :blocks => 5,
           :slam_dunks => 5           
         },
-        :ben_gordon => {
+        "Ben Gordon" => {
           :number => 8,
           :shoe => 15,
           :points => 33,
@@ -102,7 +102,7 @@ def game_hash
           :blocks => 1,
           :slam_dunks => 0          
         },
-        :brendan_haywood => {
+        "Brendan Haywood" => {
           :number => 33,
           :shoe => 15,
           :points => 6,
@@ -119,17 +119,14 @@ end
 
 
 def num_points_scored(name)
-  count = 0 
-  array = name.split(" ")
-  new_name = array.join("_").downcase
   game_hash.each do |location, teamdata| 
     teamdata.each do |key, value|
       if key == :players
         value.each do |names, item|
-          if names == ":" + new_name
+          if names == name
             item.each do |items, score|
               if items == :points
-                count = score  
+                score  
               end
             end
           end
@@ -137,24 +134,8 @@ def num_points_scored(name)
       end
     end
   end
-  count
 end
 
-def good_practices
-  game_hash.each do |location, team_data|
-    #are you ABSOLUTELY SURE what 'location' and 'team data' are? use binding.pry to find out!
-    binding.pry
-      team_data.each do |attribute, data|
-        #are you ABSOLUTELY SURE what 'attribute' and 'team data' are? use binding.pry to find out!
-        binding.pry
- 
-        #what is 'data' at each loop through out .each block? when will the following line of code work and when will it break?
-        data.each do |data_item|
-            binding.pry
-      end
-    end
-  end
-end
-good_practices
+
 
 
