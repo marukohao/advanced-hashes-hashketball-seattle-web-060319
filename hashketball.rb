@@ -160,5 +160,11 @@ end
 
 def team_colors(name)
   color = nil 
-  
+  game_hash.each do |location, teamdata| 
+    teamdata.each do |key, value|
+      if value == name
+        
+      end
+    end
+  end
 end
