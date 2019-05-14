@@ -203,3 +203,21 @@ def player_stats(name)
   end
   count  
 end
+
+def big_shoe_rebounds
+ size = 0 
+ number = 0 
+ game_hash.each do |location, teamdata| 
+    teamdata.each do |key, value|
+      if key == :players
+        value.each do |names, item|
+          if item[:shoe] > size
+            size = item[:shoe]
+            number = item[:number]
+          end
+        end
+      end
+    end
+  end
+  number 
+end
