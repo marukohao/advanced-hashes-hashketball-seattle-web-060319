@@ -119,6 +119,7 @@ end
 
 
 def num_points_scored(name)
+ count = 0 
  game_hash.each do |location, teamdata| 
     teamdata.each do |key, value|
       if key == :players
@@ -126,7 +127,7 @@ def num_points_scored(name)
           if names == name
             item.each do |items, score|
               if items == :points
-                score
+                count = score
               end
             end           
           end
@@ -134,6 +135,7 @@ def num_points_scored(name)
       end
     end
   end
+  count
 end
 
 
