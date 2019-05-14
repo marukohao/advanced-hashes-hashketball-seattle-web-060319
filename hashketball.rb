@@ -117,27 +117,27 @@ def game_hash
 end
 
 
-def num_points_scored(name)
-  count = 0 
-  array = name.split(" ")
-  new_name = array.join("_").downcase
-  game_hash.each do |location, teamdata| 
-    teamdata.each do |key, value|
-      if key == :players
-        value.each do |names, item|
-          if names == ":" + new_name
-            item.each do |items, score|
-              if items == :points
-                count = score  
-              end
-            end
-          end
-        end
-      end
-    end
-  end
-  count
-end
+# def num_points_scored(name)
+#   count = 0 
+#   array = name.split(" ")
+#   new_name = array.join("_").downcase
+#   game_hash.each do |location, teamdata| 
+#     teamdata.each do |key, value|
+#       if key == :players
+#         value.each do |names, item|
+#           if names == ":" + new_name
+#             item.each do |items, score|
+#               if items == :points
+#                 count = score  
+#               end
+#             end
+#           end
+#         end
+#       end
+#     end
+#   end
+#   count
+# end
 
 
 
