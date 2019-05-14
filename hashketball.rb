@@ -158,4 +158,7 @@ def shoe_size(name)
   count  
 end
 
-
+def team_colors(name)
+  color = nil 
+  
+end
